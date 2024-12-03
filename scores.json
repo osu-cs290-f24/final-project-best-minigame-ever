@@ -1,0 +1,34 @@
+{
+  "flappyBird": {
+    "scores": [
+      {
+        "name": "John",
+        "score": 10
+      },
+      {
+        "name": "Jane",
+        "score": 20
+      },
+      {
+        "name": "Doe",
+        "score": 30
+      }
+    ]
+  },
+  "snake": {
+    "scores": [
+      {
+        "name": "John",
+        "score": 10
+      },
+      {
+        "name": "Jane",
+        "score": 20
+      },
+      {
+        "name": "Doe",
+        "score": 30
+      }
+    ]
+  }
+}
