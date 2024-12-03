@@ -1,42 +1,68 @@
 <!DOCTYPE html>
+
+<!-- Question need to be fixed:
+ 1. (Ren) What is displayed in the central play area when we switch to Leaderboard? Do we show high score leaderboards for both games? Or just each game individually? I personally prefer show up leaderboards for both game, but we have a filter so that we can choose any specific game we want. -->
 <html>
     <head>
         <title>Leaderboard</title>
-        
         <!-- change when switching between light and dark mode -->
-        <link rel="stylesheet" href="css/lightMode.css">
-        
-        <!-- add script -->
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="../index.js" defer></script>
     </head>
     <body>
+        <!-- Menu Icon -->
+        <!-- we have homepage, flappy brid and snakes game in menu: -->
+        <!-- Note: the file location is not same with 'index.html' -->
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-items">
+                <a href="../index.html">Homepage</a>
+                <a href="../snake/snake.html">Snake</a>
+                <a href="../flappyBird/flappyBird.html">Flappy Bird</a>
+            </div>
+        </div>
+
         <header>
-            <h1 id="page-title">Leaderboards</h1>
-            <div id="navbar">
-                <div class="nav-button-container">
-                    <a href="../index.html" id="menu-link">Menu</a>
-                </div>
-                <div class="nav-button-container">
-                    <a href="" id="leaderboard-link">Leaderboard</a>
-                </div>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="../images/best-mini-game-ever-logo.png" alt="title logo">
+                </a>
+            </div>
+
+            <div class="nav-container">
+                <a href="../index.html" class="nav-button" id="minigames-btn">Minigames!</a>
+                <a href="leaderboard.html" class="nav-button active" id="leaderboard-btn">Leaderboard</a>
             </div>
             <div id="light-dark-container">
                 <button id="light-dark-button">Light/Dark Toggle</button>
             </div>
         </header>
-
         <main>
+            <!-- Ren: -->
+             <!-- This page's leaderboard could be helpful: http://flappybird.io/ -->
             <div class="leaderboard-container">
                 <h2 class="leaderboard-title">Snake</h2>
                 <div class="leaderboard-data-container">
+                    <!-- TODO -->
                     <!-- I'm thinking a table, more research needed -->
                 </div>
             </div>
             <div class="leaderboard-container">
                 <h2 class="leaderboard-title">Flappy Bird</h2>
                 <div class="leaderboard-data-container">
+                    <!-- TODO -->
                     <!-- I'm thinking a table, more research needed -->
                 </div>
             </div>
         </main>
+        <footer>
+            <div class="footer-content">
+                <a href="#" class="footer-link">@about us</a>
+            </div>
+        </footer>
     </body>
 </html>

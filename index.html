@@ -3,36 +3,55 @@
     <head>
         <!-- temp name -->
         <title>Minigames</title>
-        
         <!-- change when switching between light and dark mode -->
-        <link rel="stylesheet" href="css/lightMode.css">
-        
-        <script src="index.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="index.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1 id="page-title">Minigames!</h1>
-            <div id="light-dark-container">
-                <button id="light-dark-button">Light/Dark Toggle</button>
-            </div>
-        </header>
+        <!-- Ren: -->
+        <!-- adding the menu page: -->
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
 
-        <main>
-            <div class="page-select-container">
-                <a href="leaderboard/leaderboard.html" id="leaderboard-link">
-                    <button id="leaderboard-button">Leaderboard</button>
-                </a>
+         <div class="side-menu" id="sideMenu">
+            <div class="menu-items">
+                <!-- we have homepage, flappy brid and snakes game in menu: -->
+                 <a href="index.html">Homepage</a>
+                 <a href="snake/snake.html">Snake</a>
+                 <a href="flappyBird/flappyBird.html">Flappy Bird</a>
             </div>
-            <div class="page-select-container">
-                <a href="snake/snake.html" class="game-link">
-                    <button id="snake-button">Snake</button>
-                </a>
-            </div>
-            <div class="page-select-container">
-                <a href="flappyBird/flappyBird.html" class="game-link">
-                    <button id="flappy-bird-button">Flappy Bird</button>
-                </a>
-            </div>
+         </div>
+
+    <!-- I changed the structure of the main content, which can lets the menu page as hidden status-->
+    <header>
+        <!-- Ren: -->
+        <!-- I create this logo using AI logo designer, and I removed this watermarks using PS -->
+        <!-- I don't know is that ok or not, we can crate something like this pretty fast -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/best-mini-game-ever-logo.png" alt="title logo">
+            </a>
+        </div>
+
+        <div class="nav-container">
+            <a href="index.html" class="nav-button active" id="minigames-btn">Minigames!</a>
+            <a href="leaderboard/leaderboard.html" class="nav-button" id="leaderboard-btn">Leaderboard</a>
+        </div>
+        <div id="light-dark-container">
+            <button id="light-dark-button">Light Mode</button>
+        </div>
+    </header>
+    <!-- Game parts, we should add specitic game in here: -->
+        <main id="main-content">
+        <!-- TODO: Add game here: -->
         </main>
+        <footer>
+            <div class="footer-content">
+                <a href="#" class="footer-link">@about us</a>
+            </div>
+        </footer>
     </body>
 </html>

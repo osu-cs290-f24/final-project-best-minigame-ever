@@ -2,28 +2,42 @@
 <html>
     <head>
         <title>Snake</title>
-        
         <!-- change when switching between light and dark mode -->
-        <link rel="stylesheet" href="css/lightMode.css">
-        
-        <!-- add script -->
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="../index.js" defer></script>
     </head>
     <body>
+        <!-- Ren: -->
+        <!-- adding the menu page to snake: -->
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
+         <div class="side-menu" id="sideMenu">
+            <div class="menu-items">
+                <!-- we have homepage, flappy brid and snakes game in menu: -->
+                <!-- Note: the file location is not same with 'index.html' -->
+                 <a href="../index.html">Homepage</a>
+                 <a href="../snake/snake.html">Snake</a>
+                 <a href="../flappyBird/flappyBird.html">Flappy Bird</a>
+            </div>
+         </div>
         <header>
-            <h1 id="page-title">Snake</h1>
-            <div id="navbar">
-                <div class="nav-button-container">
-                    <a href="../index.html" id="menu-link">Menu</a>
-                </div>
-                <div class="nav-button-container">
-                    <a href="../leaderboard/leaderboard.html" id="leaderboard-link">Leaderboard</a>
-                </div>
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../images/best-mini-game-ever-logo.png" alt="title logo">
+                </a>
+            </div>
+            <div class="nav-container">
+                <a href="../index.html" class="nav-button" id="minigames-btn">Minigames!</a>
+                <a href="../leaderboard/leaderboard.html" class="nav-button" id="leaderboard-btn">Leaderboard</a>
             </div>
             <div id="light-dark-container">
-                <button id="light-dark-button">Light/Dark Toggle</button>
+                <button id="light-dark-button">Dark Mode</button>
+            </div>
             </div>
         </header>
-
         <main>
             <div id="game-container">
             </div>
