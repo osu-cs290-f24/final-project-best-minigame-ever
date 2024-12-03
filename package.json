@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "express": "^4.21.1",
-    "pixi.js": "^8.5.2"
+    "express": "^4.21.1"
   }
 }
