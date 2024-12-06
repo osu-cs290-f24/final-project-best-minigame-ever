@@ -17,6 +17,7 @@
 
     /* Pipes */
 .pipe-container{
+    height: 400px;
 }
 
 .pipe{
@@ -43,9 +44,19 @@
     color: #FFF;
     text-shadow: 2px 2px #444;
     position: relative;
-    z-index: 1;
     top: 40%;
     text-align: center;
+}
+
+.game-prompt button{
+    position: relative;
+    top: 50%;
+    left: 335px;
+    width: 130px;
+    height: 45px;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
 }
 
 /* Page Styling */

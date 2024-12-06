@@ -1,12 +1,18 @@
-var gameContainer = document.getElementById("game-container");
-
-// global game variables
+// global variables
 var running = false;
 
 function renderStart(){
     // wipe clean
     
     // render background, bird, starting pipes
+}
+
+// hide all game prompts in the game container
+function hideGamePrompts(){
+    var gamePrompts = document.getElementsByClassName("game-prompt");
+    for (var i = 0; i < gamePrompts.length; i++){
+        gamePrompts[i].classList.add("hidden");
+    }
 }
 
 // start game
@@ -16,10 +22,9 @@ function startGame(){
         running = true;
 
         // hide all game prompts
-        var gamePrompts = document.getElementsByClassName("game-prompt");
-        for (var i = 0; i < gamePrompts.length; i++){
-            gamePrompts[i].classList.add("hidden");
-        }
+        hideGamePrompts();
+
+        // generate logic
     }
 }
 
@@ -29,8 +34,21 @@ function stopGame(){
         console.log("STOP");
         running = false;
 
+        // reset prompt screens
+        hideGamePrompts();
+
         // show pause screen
+        var pausePrompt = document.getElementById("pause-screen-container");
+        pausePrompt.classList.remove("hidden");
     }
+}
+
+// resume game from pause
+function resumeGame(){
+    running = true;
+
+    // hide game prompts
+    hideGamePrompts();
 }
 
 // on key down
@@ -47,5 +65,13 @@ document.addEventListener("keydown", (key) => {
 // button listeners
 var startButton = document.getElementById("start-game-button");
 var stopButton = document.getElementById("stop-game-button");
+var resumeButton = document.getElementById("resume-game-button");
 startButton.addEventListener("click", startGame);
 stopButton.addEventListener("click", stopGame);
+resumeButton.addEventListener("click", resumeGame);
+
+
+
+// update game
+while (running){
+}
