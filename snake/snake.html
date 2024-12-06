@@ -51,7 +51,34 @@
             </div>
             <div id="start-stop-container">
                 <button id="start-game-button">Start</button>
-                <button id="stop-game-button">Stop</button>
+                <button id="stop-game-button">Pause</button>
+            </div>
+            <div id="modal-backdrop" class="hidden"></div>
+            <div id="end-modal" class="hidden modal-main">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <h2>GAME OVER</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your final score was <span id="score-showcase">3</span> </p>
+                        <div>
+                            <button id="reset-game-button">Restart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pause-modal" class="hidden modal-main">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <h2>GAME PAUSED</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>The game is currently paused</span> </p>
+                        <div>
+                            <button id="resume-game-button">Resume</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </body>

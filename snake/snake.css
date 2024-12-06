@@ -26,3 +26,71 @@
 .hidden{
     display:none;
 }
+
+#modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-main {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1010;
+    overflow: scroll;
+}
+
+.modal-box {
+    width: auto;
+    max-width: 600px;
+    min-width: 350px;
+    min-height: 300px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.modal-header {
+    position: relative;
+    padding: 10px 20px;
+}
+
+#reset-game-button {
+    display:flex;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 28px;
+    text-align:center;
+}
+
+.modal-body p {
+    font-size: 18px;
+    text-align:center;
+}
+
+#reset-game-button{
+    margin-left:37.5%;
+    width:25%;
+    text-align:center;
+    font-size:18px;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+#resume-game-button{
+    margin-left:37.5%;
+    width:25%;
+    text-align:center;
+    font-size:18px;
+    display:table-cell;
+    vertical-align: middle;
+}
