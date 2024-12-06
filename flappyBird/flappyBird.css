@@ -4,20 +4,45 @@
     position: relative;
     left: 100px;
     top: 150px;
-    width: 75px;
-    height: 55px;
+    width: 55px;
+    height: 35px;
 }
 
 #bird-img{
     position: relative;
     bottom: 10px;
-    width: 75px;
-    height: 75px;
+    width: 55px;
+    height: 55px;
 }
 
     /* Pipes */
 .pipe-container{
+    position: absolute;
+    top: 0px;
     height: 400px;
+}
+
+.upper-pipe{
+    position: absolute;
+    width: 75px;
+    height: 230px;
+}
+
+.lower-pipe{
+    position: absolute;
+    width: 75px;
+    height: 230px;
+}
+
+.upper-pipe-img{
+    width: 75px;
+    height: 230px;
+    rotate: 180deg;
+}
+
+.lower-pipe-img{
+    width: 75px;
+    height: 230px;
 }
 
     /* Game Prompts */
