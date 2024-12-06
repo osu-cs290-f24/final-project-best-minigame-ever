@@ -59,6 +59,10 @@
     border-radius: 4px;
 }
 
+.game-prompt button:hover{
+    cursor: pointer;
+}
+
 /* Page Styling */
 #game-container{
     width: 800px;
@@ -112,6 +116,7 @@
 
 #start-stop-container button:hover{
     background-color: #CCC;
+    cursor: pointer;
 }
 
 /* Dark Mode Page Styling */
