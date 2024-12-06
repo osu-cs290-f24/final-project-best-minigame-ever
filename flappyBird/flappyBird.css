@@ -37,9 +37,18 @@
     text-align: center;
 }
 
+.game-prompt h3{
+    color: #FFF;
+    text-shadow: 2px 2px #444;
+    position: relative;
+    top: 44%;
+    text-align: center;
+}
+
 .game-prompt-button-container{
     position: relative;
     top: 200px;
+    left: 270px;
 }
 
 .game-prompt button{
