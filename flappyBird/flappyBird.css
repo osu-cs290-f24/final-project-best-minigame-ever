@@ -1,5 +1,68 @@
+/* Game Styling */
+#bird-container{
+    position: relative;
+    left: 100px;
+    top: 150px;
+    width: 75px;
+    height: 55px;
+}
+
+#bird-img{
+    position: relative;
+    bottom: 10px;
+    width: 75px;
+    height: 75px;
+}
+
+.pipe-container{
+}
+
+.pipe{
+}
+
+.pipe.upper-pipe{
+}
+
+.pipe.lower-pipe{
+}
+
+.pipe-scorer{
+}
+
+/* Page Styling */
 #game-container{
-    width: 100px;
-    height: 100px;
+    width: 800px;
+    height: 400px;
     border: 1px solid #000;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    background-color: skyblue;
+}
+
+.game-prompt{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-color: #0004;
+    z-index: 1;
+}
+
+.game-prompt h2{
+    color: #FFF;
+    text-shadow: 2px 2px #444;
+    position: relative;
+    z-index: 1;
+    top: 40%;
+    text-align: center;
+}
+
+/* Dark Mode Page Styling */
+body.dark-mode #game-container{
+    border: 1px solid #FFF;
+}
+
+/* Hidden Display */
+.hidden{
+    display: none;
 }

@@ -1,5 +1,8 @@
 var gameContainer = document.getElementById("game-container");
 
+// global game variables
+var running = false;
+
 function renderStart(){
     // wipe clean
     
@@ -8,12 +11,26 @@ function renderStart(){
 
 // start game
 function startGame(){
-    console.log("START");
+    if (!running){
+        console.log("START");
+        running = true;
+
+        // hide all game prompts
+        var gamePrompts = document.getElementsByClassName("game-prompt");
+        for (var i = 0; i < gamePrompts.length; i++){
+            gamePrompts[i].classList.add("hidden");
+        }
+    }
 }
 
 // pause game
 function stopGame(){
-    console.log("STOP");
+    if (running){
+        console.log("STOP");
+        running = false;
+
+        // show pause screen
+    }
 }
 
 // on key down
