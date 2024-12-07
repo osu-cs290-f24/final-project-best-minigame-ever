@@ -11,7 +11,7 @@ const defaultBird = {
     speed: 3.5,
     width: 40,
     height: 25,
-    jumpSpeed: -3.5,
+    jumpSpeed: -4,
     gravity: 0.3
 };
 var bird;
