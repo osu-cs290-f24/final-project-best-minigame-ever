@@ -9,7 +9,7 @@ var scoreElement = document.getElementById("current-score");
 const defaultBird = {
     top: 150,
     speed: 3.5,
-    width: 45,
+    width: 40,
     height: 25,
     jumpSpeed: -5,
     gravity: 0.3
@@ -204,9 +204,25 @@ function updatePipes(){
 }
 
 function checkCollision(){
-    /*
-        * TO DO
-    */
+    for (var i = 0; i < pipes.length; i++){
+        // check if in pipe area
+        if ((100 + bird.width) > pipes[i].left && 
+                100 < (pipes[i].left + 75)){
+            // if touching upper pipe
+            if (bird.top < (400 - pipes[i].topPipeBottom))
+                endGame();
+            // if touching bottom pipe
+            else if ((bird.top + bird.height) > pipes[i].bottomPipeTop)
+                endGame();
+
+            // render last bird frame
+            if (!running)
+                updateBird();
+
+            // bird can only be in 1 pipe area
+            break;
+        }
+    }
 }
 
 function checkIfScored(){
@@ -244,12 +260,12 @@ function update(){
 
     // update pipes
     updatePipes();
-
-    // check bird collision
-    checkCollision();
     
     // check if scored
     checkIfScored();
+
+    // check bird collision
+    checkCollision();
 }
 
 // on key down
