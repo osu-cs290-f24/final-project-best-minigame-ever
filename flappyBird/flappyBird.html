@@ -4,7 +4,8 @@
         <title>Flappy Bird</title>
         <!-- change when switching between light and dark mode -->
         <link rel="stylesheet" href="../css/styles.css">
-        <script src="./flappyBird.js"></script>
+        <link rel="stylesheet" href="flappyBird.css">
+        <script src="flappyBird.js" defer></script>
         <script src="../index.js" defer></script>
     </head>
     <body>
@@ -40,17 +41,39 @@
         </header>
         <main>
             <div id="game-container">
-            </div>
-            <div id="score-container">
-                <h2 id="score-title">Score</h2>
-                <div id="current-score-container">
-                    <h3 id="current-score">0</h3>
+                <div id="start-screen-container" class="game-prompt">
+                    <h2>Click "Start" to start playing!</h2>
+                </div>
+                <div id="pause-screen-container" class="game-prompt hidden">
+                    <h2>Game Paused</h2>
+                    <div class="game-prompt-button-container">
+                        <button id="resume-game-button">Resume</button>
+                        <button class="restart-game-button">Restart</button>
+                    </div>
+                </div>
+                <div id="lose-screen-container" class="game-prompt hidden">
+                    <h2>Game Over</h2>
+                    <h3 id="lose-screen-score">Score: 0</h3>
+                    <div class="game-prompt-button-container">
+                        <button class="restart-game-button">Try Again?</button>
+                        <button id="submit-score-button">Submit Score</button>
+                    </div>
+                </div>
+                <div id="bird-container">
+                    <img src="bird.png" alt="bird" id="bird-img">
                 </div>
             </div>
-            <div id="start-stop-container">
-                <button id="start-game-button">Start</button>
-                <button id="stop-game-button">Stop</button>
+            <div id="info-container">
+                <div id="score-container">
+                    <h2 id="score-title" class="score-text">Score</h2>
+                    <h3 id="current-score" class="score-text">0</h3>
+                </div>
+                <div id="start-stop-container">
+                    <button id="start-game-button">Start</button>
+                    <button id="stop-game-button">Stop</button>
+                </div>
             </div>
+            <!-- insert score submission screen -->
         </main>
     </body>
 </html>
