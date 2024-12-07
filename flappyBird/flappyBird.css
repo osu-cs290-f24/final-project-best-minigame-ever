@@ -26,24 +26,24 @@
 .upper-pipe{
     position: absolute;
     width: 75px;
-    height: 230px;
 }
 
 .lower-pipe{
     position: absolute;
     width: 75px;
-    height: 230px;
 }
 
 .upper-pipe-img{
+    position: absolute;
+    bottom: 0px;
     width: 75px;
-    height: 230px;
     rotate: 180deg;
 }
 
 .lower-pipe-img{
+    position: absolute;
+    top: 0px;
     width: 75px;
-    height: 230px;
 }
 
     /* Game Prompts */
@@ -97,6 +97,7 @@
     left: 225px;
     top: 100px;
     background-color: skyblue;
+    overflow: hidden;
 }
 
 #info-container{

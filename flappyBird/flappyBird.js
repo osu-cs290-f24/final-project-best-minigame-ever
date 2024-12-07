@@ -11,7 +11,7 @@ const defaultBird = {
     speed: 3.5,
     width: 40,
     height: 25,
-    jumpSpeed: -5,
+    jumpSpeed: -3.5,
     gravity: 0.3
 };
 var bird;
@@ -119,16 +119,16 @@ function endGame(){
 function updateBird(){
     var gameBird = document.getElementById("bird-container");
     gameBird.style.top = bird.top + 'px';
-    /*
-        * add bird rotation
-    */
+    
+    var birdImg= document.getElementById("bird-img");
+    birdImg.style.rotate = (bird.speed * 5) + 'deg';
 }
 
 // add new pipe
 function createPipe(){
     var newPipe = {
         left: 800,
-        topPipeBottom: Math.floor(Math.random() * 320) + 80,
+        topPipeBottom: Math.floor(Math.random() * 230) + 150,
         scored: false
     };
     newPipe.bottomPipeTop = 400 - newPipe.topPipeBottom + 110;
