@@ -10,8 +10,8 @@ const defaultBird = {
     speed: 3.5,
     width: 55,
     height: 35,
-    jumpSpeed: -10,
-    gravity: 0.5
+    jumpSpeed: -6,
+    gravity: 0.4
 };
 var bird;
 
@@ -123,9 +123,10 @@ function updateBird(){
 function createPipe(){
     var newPipe = {
         left: 800,
-        topPipeBottom: Math.floor(Math.random() * 360) + 40
+        topPipeBottom: Math.floor(Math.random() * 320) + 80,
+        scored: false
     };
-    newPipe.bottomPipeTop = 400 - newPipe.topPipeBottom + 60;
+    newPipe.bottomPipeTop = 400 - newPipe.topPipeBottom + 110;
 
     pipes.push(newPipe);
 }
@@ -177,12 +178,24 @@ function updatePipes(){
     }
 
     // move pipes
-    for (var i = 0; i < pipes.length - 1; i++)
+    for (var i = 0; i < pipes.length; i++)
         pipes[i].left -= 2;
 
     // update DOM
     for (var i = 0; i < pipeElements.length; i++){
-        pipeElements[i].style.left -= 2;
+        pipeElements[i].style.left = pipes[i].left + "px";
+    }
+}
+
+function checkIfScored(){
+    for (var i = 0; i < pipes.length; i++){
+        if (!pipes[i].scored){
+            if ((pipes[i].left + 75) < 100){
+                // scored
+                score++;
+                pipes[i].scored = true;
+            }
+        }
     }
 }
 
@@ -191,7 +204,7 @@ function update(){
     // stop if not running
     if (!running) return;
 
-    // update game
+    // update bird & score
     updateBird();
     document.getElementById("current-score").textContent = score;
 
@@ -225,9 +238,7 @@ function update(){
     */
     
     // check if scored
-    /*
-        * TO DO
-    */
+    checkIfScored();
 }
 
 // on key down
