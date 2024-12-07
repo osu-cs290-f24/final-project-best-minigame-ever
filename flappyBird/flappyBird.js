@@ -1,6 +1,7 @@
 // global variables
 var interval = 16;
 var running = false;
+var currentScoreSubmit = false;
 var score = 2;
 var pipes = [];
 var pipeNum = 0;
@@ -47,13 +48,48 @@ function renderStart(){
 
 // submit game score to leaderboard
 function submitScore(){
+    // block multiple submits from same game
+    if (currentScoreSubmit){
+        alert("Current Score Already Submitted");
+        return;
+    }
+
+    // unhide container
+    var scoreSubmitContainer = document.getElementById("score-submit-container");
+    scoreSubmitContainer.classList.remove("hidden");
+
+    // set score display
+    var scoreSubmitScore = document.getElementById("score-submit-score");
+    scoreSubmitScore.textContent = score;
+
+    // focus input field
+    var inputField = document.getElementById("score-submit-input");
+    inputField.value = "";
+    inputField.focus();
+}
+
+// send score to server
+function sendScore(){
     /*
         * TO DO
+        * send to server
+    */
+
+    currentScoreSubmit = true;
+
+    // hide container
+    var scoreSubmitContainer = document.getElementById("score-submit-container");
+    scoreSubmitContainer.classList.add("hidden");
+
+    /*
+        * TO DO
+        * send to server
     */
 }
 
 function birdJump(){
-    bird.speed = bird.jumpSpeed;
+    if (running)
+        bird.speed = bird.jumpSpeed;
 }
 
 // hide all game prompts in the game container
@@ -62,6 +98,15 @@ function hideGamePrompts(){
     for (var i = 0; i < gamePrompts.length; i++){
         gamePrompts[i].classList.add("hidden");
     }
+
+    // hide submit score container
+    var scoreSubmitContainer = document.getElementById("score-submit-container");
+    scoreSubmitContainer.classList.add("hidden");
+}
+
+function hideScoreSubmit(){
+    var scoreSubmitContainer = document.getElementById("score-submit-container");
+    scoreSubmitContainer.classList.add("hidden");
 }
 
 // start game
@@ -75,6 +120,7 @@ function startGame(){
 
         // start game
         running = true;
+        currentScoreSubmit = false;
     }
 }
 
@@ -285,6 +331,8 @@ var stopButton = document.getElementById("stop-game-button");
 var resumeButton = document.getElementById("resume-game-button");
 var restartButtons = document.getElementsByClassName("restart-game-button");
 var submitScoreButton = document.getElementById("submit-score-button");
+var scoreSubmitButton = document.getElementById("score-submit-button");
+var scoreSubmitClose = document.getElementById("score-submit-close");
 
 startButton.addEventListener("click", startGame);
 stopButton.addEventListener("click", stopGame);
@@ -292,6 +340,8 @@ resumeButton.addEventListener("click", resumeGame);
 for (var i = 0; i < restartButtons.length; i++)
     restartButtons[i].addEventListener("click", startGame);
 submitScoreButton.addEventListener("click", submitScore);
+scoreSubmitButton.addEventListener("click", sendScore);
+scoreSubmitClose.addEventListener("click", hideScoreSubmit);
 
 // update every interval ms
 setInterval(update, interval);
