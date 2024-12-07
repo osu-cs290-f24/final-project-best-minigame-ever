@@ -1,5 +1,10 @@
 # Mini Game:
 
+## Update: Leo Dec.7:
+1. Flappy bird game complete, all styling and gamplay is finished for the page.
+2. The leaderboard data implementation is still needed.
+3. UI for the snake game should be consistant
+
 ## Update: Ren Dec.2:
 
 1. Merge 'lightmode.css' and 'darkmode.css' into one 'styles.css' for avoiding avoid bugs that might be caused by frequent switching between different files.
@@ -15,14 +20,14 @@
 11. I will modify Dark/Light icon later.
 
 ## Next:
-1. Game (most important part)
+1. ~~Game (most important part)~~
 2. Leaderboard
 3. Homepage
-4. Start / stop game function.
-5. cookie?
-6. '@about as'
+4. Start / stop game function. (just for snake)
+5. ~~cookie?~~(No longer nessesary)
+6. '@about us'
 7. npm
-8. etc.
+9. etc.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
