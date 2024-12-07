@@ -15,6 +15,9 @@ const defaultBird = {
 };
 var bird;
 
+/*
+    * TEST VARs
+*/
 var pipeTest = true;
 
 function clearPipes () {
@@ -129,6 +132,7 @@ function createPipe(){
     newPipe.bottomPipeTop = 400 - newPipe.topPipeBottom + 110;
 
     pipes.push(newPipe);
+    createPipeElement(pipes.length - 1);
 }
 
 // create new pipe element, add to DOM
@@ -166,6 +170,12 @@ function createPipeElement(index){
     gameContainer.appendChild(newPipeContainer);
 }
 
+function removePipe(index){
+    pipes.splice(index, 1);
+    var pipeElements = document.getElementsByClassName("pipe-container");
+    pipeElements[index].remove();
+}
+
 
 // update all pipe positions
 function updatePipes(){
@@ -173,9 +183,18 @@ function updatePipes(){
     var pipeElements = document.getElementsByClassName("pipe-container");
 
     // add new pipe
-    if (pipeElements.length > pipes.length){
-        createPipeElement();
+    /*
+        * TO DO
+        * also, remove test
+    */
+    if (pipeTest){
+        createPipe();
+        pipeTest = false;
     }
+
+    // remove pipe
+    if (pipes[0].left < -75)
+        removePipe(0);
 
     // move pipes
     for (var i = 0; i < pipes.length; i++)
@@ -185,6 +204,12 @@ function updatePipes(){
     for (var i = 0; i < pipeElements.length; i++){
         pipeElements[i].style.left = pipes[i].left + "px";
     }
+}
+
+function checkCollision(){
+    /*
+        * TO DO
+    */
 }
 
 function checkIfScored(){
@@ -222,20 +247,11 @@ function update(){
     if (bird.top > (400 - (bird.height - 5)))
         endGame();
 
-    // add new pipe if needed
-    if (pipeTest){
-        createPipe();
-        createPipeElement(pipes.length - 1);
-        pipeTest = false;
-    }
-
-    // update pipe position
+    // update pipes
     updatePipes();
 
     // check bird collision
-    /*
-        * TO DO
-    */
+    checkCollision();
     
     // check if scored
     checkIfScored();

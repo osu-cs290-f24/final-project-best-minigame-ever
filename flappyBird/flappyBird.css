@@ -6,6 +6,7 @@
     top: 150px;
     width: 55px;
     height: 35px;
+    z-index: 1;
 }
 
 #bird-img{
@@ -51,7 +52,7 @@
     width: 800px;
     height: 400px;
     background-color: #0004;
-    z-index: 1;
+    z-index: 2;
 }
 
 .game-prompt h2{
