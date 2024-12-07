@@ -4,16 +4,16 @@
     position: relative;
     left: 100px;
     top: 150px;
-    width: 55px;
-    height: 35px;
+    width: 45px;
+    height: 25px;
     z-index: 1;
 }
 
 #bird-img{
     position: relative;
     bottom: 10px;
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
 }
 
     /* Pipes */

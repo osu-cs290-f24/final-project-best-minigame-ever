@@ -3,31 +3,20 @@ var interval = 16;
 var running = false;
 var score = 2;
 var pipes = [];
-var pipeCount = 0;
+var pipeNum = 0;
+var pipeSepVal = 120;
 var scoreElement = document.getElementById("current-score");
 const defaultBird = {
     top: 150,
     speed: 3.5,
-    width: 55,
-    height: 35,
-    jumpSpeed: -6,
-    gravity: 0.4
+    width: 45,
+    height: 25,
+    jumpSpeed: -5,
+    gravity: 0.3
 };
 var bird;
 
-/*
-    * TEST VARs
-*/
-var pipeTest = true;
-
-function clearPipes () {
-    var pipeElements = document.getElementsByClassName("pipe-container");
-    for (var i = 0; i < pipeElements.length; i++)
-        pipeElements[i].remove();
-}
-
-function renderStart(){
-    // reset bird position
+function resetBird(){
     bird = {
         top: defaultBird.top,
         speed: defaultBird.speed,
@@ -36,12 +25,24 @@ function renderStart(){
         jumpSpeed: defaultBird.jumpSpeed,
         gravity: defaultBird.gravity
     };
+}
+
+function resetPipes() {
+    pipes = [];
+    var pipeElements = document.getElementsByClassName("pipe-container");
+    while (pipeElements.length != 0)
+        pipeElements[0].remove();
+}
+
+function renderStart(){
+    // reset bird
+    resetBird();
 
     // reset score
     score = 0;
 
     // remove all pipes
-    clearPipes();
+    resetPipes();
 }
 
 // submit game score to leaderboard
@@ -66,13 +67,14 @@ function hideGamePrompts(){
 // start game
 function startGame(){
     if (!running){
-        running = true;
-
         // hide all game prompts
         hideGamePrompts();
 
         // generate logic
         renderStart();
+
+        // start game
+        running = true;
     }
 }
 
@@ -140,7 +142,8 @@ function createPipeElement(index){
     // pipe container
     var newPipeContainer = document.createElement('div');
     newPipeContainer.classList.add("pipe-container");
-    newPipeContainer.id = "pipe-" + pipeCount;
+    newPipeContainer.id = "pipe-" + pipeNum;
+    pipeNum++;
     newPipeContainer.style.left = pipes[index].left + "px";
 
     // upper pipe
@@ -183,14 +186,8 @@ function updatePipes(){
     var pipeElements = document.getElementsByClassName("pipe-container");
 
     // add new pipe
-    /*
-        * TO DO
-        * also, remove test
-    */
-    if (pipeTest){
+    if (pipes.length == 0 || (800 - pipes[pipes.length - 1].left) > (75 + pipeSepVal))
         createPipe();
-        pipeTest = false;
-    }
 
     // remove pipe
     if (pipes[0].left < -75)
@@ -214,12 +211,10 @@ function checkCollision(){
 
 function checkIfScored(){
     for (var i = 0; i < pipes.length; i++){
-        if (!pipes[i].scored){
-            if ((pipes[i].left + 75) < 100){
-                // scored
-                score++;
-                pipes[i].scored = true;
-            }
+        if (!pipes[i].scored && (pipes[i].left + 75) < 100){
+            // scored
+            score++;
+            pipes[i].scored = true;
         }
     }
 }
