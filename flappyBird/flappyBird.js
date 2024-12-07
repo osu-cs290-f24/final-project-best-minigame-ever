@@ -2,7 +2,7 @@
 var interval = 16;
 var running = false;
 var currentScoreSubmit = false;
-var score = 2;
+var score = 0;
 var pipes = [];
 var pipeNum = 0;
 var pipeSepVal = 120;
@@ -70,20 +70,31 @@ function submitScore(){
 
 // send score to server
 function sendScore(){
-    /*
-        * TO DO
-        * send to server
-    */
+    // error check
+    var inputField = document.getElementById("score-submit-input");
+    if (inputField.value.length != 3){
+        alert("Display name must be 3 characters.");
+        return;
+    }
 
+    // package data
+    var data = {
+        name: inputField.value.toUpperCase(),
+        score: score
+    };
+
+    // mark this game as a submitted score
     currentScoreSubmit = true;
+    document.getElementById("submit-score-button").style.backgroundColor = "#CCC";
 
     // hide container
     var scoreSubmitContainer = document.getElementById("score-submit-container");
     scoreSubmitContainer.classList.add("hidden");
 
+    // send to server
+    console.log(data);
     /*
         * TO DO
-        * send to server
     */
 }
 
@@ -121,6 +132,7 @@ function startGame(){
         // start game
         running = true;
         currentScoreSubmit = false;
+        document.getElementById("submit-score-button").style.backgroundColor = "";
     }
 }
 
