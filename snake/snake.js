@@ -244,25 +244,30 @@ function sendScore(){
         return;
     }
 
-    // package data
-    var data = {
-        name: inputField.value.toUpperCase(),
-        score: score
-    };
+    fetch("/leaderboard/snake/addScore", {
+        method: "POST",
+        body: JSON.stringify({
+            name: inputField.value.toUpperCase(),
+            score: score
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function(res){
+        if (res.status == 200){
+            // mark this game as a submitted score
+            currentScoreSubmit = true;
+            document.getElementById("submit-score-button").style.backgroundColor = "#CCC";
 
-    // mark this game as a submitted score
-    currentScoreSubmit = true;
-    document.getElementById("submit-score-button").style.backgroundColor = "#CCC";
-
-    // hide container
-    var scoreSubmitContainer = document.getElementById("score-submit-container");
-    scoreSubmitContainer.classList.add("hidden");
-    toggle_end();
-    // send to server
-    console.log(data);
-    /*
-        * TO DO
-    */
+            // hide container
+            var scoreSubmitContainer = document.getElementById("score-submit-container");
+            scoreSubmitContainer.classList.add("hidden");
+            toggle_end();
+        } else {
+            alert("Error " + res.status + ": " + res.statusText);
+        }
+    }
+)
 }
 
 function toggle_end(){
@@ -294,6 +299,13 @@ submit_score_button.addEventListener("click",submit_score);
 
 var score_submit_button = document.getElementById('score-submit-button');
 score_submit_button.addEventListener("click",sendScore);
+
+var score_submit_close = document.getElementById('score-submit-close');
+score_submit_close.addEventListener("click", function(){
+    var scoreSubmitContainer = document.getElementById("score-submit-container");
+    scoreSubmitContainer.classList.add("hidden");
+    toggle_end(); 
+})
 
 function initialize(){
     score = 3;

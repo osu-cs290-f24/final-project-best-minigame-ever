@@ -51,15 +51,17 @@
                     <button id="score-submit-close">X</button>
                 </div>
             </div>
-            <div id="score-container">
-                <h2 id="score-title">Score</h2>
-                <div id="current-score-container">
-                    <h3 id="current-score">0</h3>
+            <div id="info-container">
+                <div id="score-container">
+                    <h2 id="score-title">Score</h2>
+                    <div id="current-score-container">
+                        <h3 id="current-score">0</h3>
+                    </div>
                 </div>
-            </div>
-            <div id="start-stop-container">
-                <button id="start-game-button">Start</button>
-                <button id="stop-game-button">Pause</button>
+                <div id="start-stop-container">
+                    <button id="start-game-button">Start</button>
+                    <button id="stop-game-button">Pause</button>
+                </div>
             </div>
             <div id="modal-backdrop" class="hidden"></div>
             <div id="end-modal" class="hidden modal-main">
@@ -69,9 +71,9 @@
                     </div>
                     <div class="modal-body">
                         <p>Your final score was <span id="score-showcase">3</span> </p>
-                        <div>
-                            <button id="submit-score-button">Submit Score</button>
+                        <div class="button-container">
                             <button id="reset-game-button">Restart</button>
+                            <button id="submit-score-button">Submit Score</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +85,7 @@
                     </div>
                     <div class="modal-body">
                         <p>The game is currently paused</span> </p>
-                        <div>
+                        <div class="button-container">
                             <button id="resume-game-button">Resume</button>
                         </div>
                     </div>
