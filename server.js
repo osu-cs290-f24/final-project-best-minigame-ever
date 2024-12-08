@@ -1,5 +1,6 @@
 var fs = require('fs')
 var express = require('express')
+var {table} = require('table')
 var port = process.env.PORT || 3000
 var app = express()
 app.use(express.static(__dirname))
@@ -25,12 +26,13 @@ app.get("/snake", function(req, res, next) {
 app.get("/leaderboard", function(req, res, next) {
     res.status(200).sendFile(__dirname + "/leaderboard/leaderboard.html")
 })
-//leaderboard data
+//get leaderboard table
 app.get("/leaderboard/:gameId", function(req, res, next){
     var gameId = req.params.gameId
     var scoreData = scoresFile[gameId]
     if(scoreData && scoreData.scores){
-        res.status(200).json(scoreData.scores)
+        const data = [['Name', 'Score'], ...scoreData.scores.map(score => [score.name, score.score])]
+        res.status(200).json(table(data))
     } else{
         res.status(404).send("Game not found")
     }
@@ -44,7 +46,9 @@ app.post("/leaderboard/:gameId/addScore", function(req, res, next) {
     var gameId = req.params.gameId
     var scoreData = scoresFile[gameId].scores
     
-    if(req.body.name && req.body.score){
+    if(req.body.name != null && req.body.score != null
+        && typeof req.body.name === "string" && typeof req.body.score === "number"
+    ){
         if(scoreData){
             scoreData.push({
                 name: req.body.name,
@@ -65,7 +69,7 @@ app.post("/leaderboard/:gameId/addScore", function(req, res, next) {
             next()
         }
     } else {
-        res.status(400).send("Incomplete request body")
+        res.status(400).send("Incomplete request body or invalid data types")
     }
 
 })
