@@ -22,6 +22,7 @@ var apple_y = 6;
 var score = 3;
 const height = 800;
 const width = 400;
+var currentScoreSubmit = false;
 var score_display = document.getElementById("current-score");
 
 
@@ -167,12 +168,10 @@ function pause_game(){
 
 function end_game(){
     stop_game();
-    var backdrop = document.getElementById('modal-backdrop');
-    var end_modal = document.getElementById('end-modal');
     var final_score_container = document.getElementById('score-showcase'); 
     final_score_container.textContent = score;
-    backdrop.classList.toggle('hidden');
-    end_modal.classList.toggle('hidden');
+    toggle_end();
+
 }
 
 function check_collision(x_shift, y_shift){
@@ -226,12 +225,49 @@ function spawn_apple(){
 }
 
 function submit_score(){
+    if(currentScoreSubmit){
+        alert("Score already submitted.");
+        return;
+    }
     var score_container = document.getElementById('score-submit-container');
-    var score_submit_score = document.getElementById('score-submit-container');
-    var backdrop = document.getElementById('modal-backdrop');
-    var end_modal = document.getElementById('end-modal');
+    var score_submit_score = document.getElementById('score-submit-score');
+    toggle_end();
     score_container.classList.toggle('hidden');
     score_submit_score.textContent = score;
+}
+
+function sendScore(){
+    // error check
+    var inputField = document.getElementById("score-submit-input");
+    if (inputField.value.length != 3){
+        alert("Display name must be 3 characters.");
+        return;
+    }
+
+    // package data
+    var data = {
+        name: inputField.value.toUpperCase(),
+        score: score
+    };
+
+    // mark this game as a submitted score
+    currentScoreSubmit = true;
+    document.getElementById("submit-score-button").style.backgroundColor = "#CCC";
+
+    // hide container
+    var scoreSubmitContainer = document.getElementById("score-submit-container");
+    scoreSubmitContainer.classList.add("hidden");
+    toggle_end();
+    // send to server
+    console.log(data);
+    /*
+        * TO DO
+    */
+}
+
+function toggle_end(){
+    var backdrop = document.getElementById('modal-backdrop');
+    var end_modal = document.getElementById('end-modal');
     backdrop.classList.toggle('hidden');
     end_modal.classList.toggle('hidden');
 }
@@ -246,10 +282,7 @@ pause_button.addEventListener("click",pause_game);
 
 var reset_button = document.getElementById('reset-game-button');
 reset_button.addEventListener("click",function(){
-    var backdrop = document.getElementById('modal-backdrop');
-    var end_modal = document.getElementById('end-modal');
-    backdrop.classList.toggle('hidden');
-    end_modal.classList.toggle('hidden');
+    toggle_end();
     initialize();
 })
 
@@ -258,6 +291,9 @@ resume_button.addEventListener("click", pause_game);
 
 var submit_score_button = document.getElementById('submit-score-button');
 submit_score_button.addEventListener("click",submit_score);
+
+var score_submit_button = document.getElementById('score-submit-button');
+score_submit_button.addEventListener("click",sendScore);
 
 function initialize(){
     score = 3;
@@ -270,6 +306,7 @@ function initialize(){
         Apples[0].remove();
         Apples.shift();
     }
+    currentScoreSubmit = false;
     make_snake(3,4);
     make_snake(4,4);
     make_snake(5,4);
