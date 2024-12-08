@@ -169,7 +169,7 @@ function end_game(){
     stop_game();
     var backdrop = document.getElementById('modal-backdrop');
     var end_modal = document.getElementById('end-modal');
-    var final_score_container = document.getElementById('score-showcase');
+    var final_score_container = document.getElementById('score-showcase'); 
     final_score_container.textContent = score;
     backdrop.classList.toggle('hidden');
     end_modal.classList.toggle('hidden');
@@ -225,6 +225,17 @@ function spawn_apple(){
     make_apple(apple_x,apple_y);
 }
 
+function submit_score(){
+    var score_container = document.getElementById('score-submit-container');
+    var score_submit_score = document.getElementById('score-submit-container');
+    var backdrop = document.getElementById('modal-backdrop');
+    var end_modal = document.getElementById('end-modal');
+    score_container.classList.toggle('hidden');
+    score_submit_score.textContent = score;
+    backdrop.classList.toggle('hidden');
+    end_modal.classList.toggle('hidden');
+}
+
 document.addEventListener("keyup", button_input);
 
 var start_button = document.getElementById("start-game-button");
@@ -244,6 +255,9 @@ reset_button.addEventListener("click",function(){
 
 var resume_button = document.getElementById('resume-game-button');
 resume_button.addEventListener("click", pause_game);
+
+var submit_score_button = document.getElementById('submit-score-button');
+submit_score_button.addEventListener("click",submit_score);
 
 function initialize(){
     score = 3;
