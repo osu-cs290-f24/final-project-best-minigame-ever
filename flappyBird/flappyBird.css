@@ -1,0 +1,276 @@
+/* Game Styling */
+    /* Bird */
+#bird-container{
+    position: relative;
+    left: 100px;
+    top: 150px;
+    width: 45px;
+    height: 25px;
+    z-index: 1;
+}
+
+#bird-img{
+    position: relative;
+    bottom: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+    /* Pipes */
+.pipe-container{
+    position: absolute;
+    top: 0px;
+    height: 400px;
+}
+
+.upper-pipe{
+    position: absolute;
+    width: 75px;
+}
+
+.lower-pipe{
+    position: absolute;
+    width: 75px;
+}
+
+.upper-pipe-img{
+    position: absolute;
+    bottom: 0px;
+    width: 75px;
+    rotate: 180deg;
+}
+
+.lower-pipe-img{
+    position: absolute;
+    top: 0px;
+    width: 75px;
+}
+
+    /* Game Prompts */
+.game-prompt{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-color: #0004;
+    z-index: 2;
+}
+
+.game-prompt h2{
+    color: #FFF;
+    text-shadow: 2px 2px #444;
+    position: relative;
+    top: 40%;
+    text-align: center;
+}
+
+.game-prompt h3{
+    color: #FFF;
+    text-shadow: 2px 2px #444;
+    position: relative;
+    top: 44%;
+    text-align: center;
+}
+
+.game-prompt-button-container{
+    position: relative;
+    top: 200px;
+    left: 270px;
+}
+
+.game-prompt button{
+    width: 130px;
+    height: 45px;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    background-color: #DDD;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.game-prompt button:hover{
+    background-color: #CCC;
+    cursor: pointer;
+}
+
+    /* Score Submit Screen */
+#score-submit-container{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 500px;
+    height: 300px;
+    z-index: 3;
+    background-color: #F7F7F9;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-container h2{
+    font-size: 32px;
+    margin-top: 10px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-input{
+    position: absolute;
+    top: 150px;
+    left: 205px;
+    width: 90px;
+    height: 40px;
+    font-size: 32px;
+    text-transform: uppercase;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-button{
+    position: absolute;
+    top: 220px;
+    left: 185px;
+    width: 130px;
+    height: 45px;
+    font-size: 20px;
+    background-color: #DDD;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-button:hover{
+    background-color: #CCC;
+    cursor: pointer;
+}
+
+#score-submit-close{
+    position: absolute;
+    top: 0px;
+    left: 473px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    background-color: #DDD;
+    border: none;
+    border-radius: 0px 4px 0px 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-close:hover{
+    background-color: #CCC;
+    cursor: pointer;
+}
+
+/* Page Styling */
+#game-container{
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    left: 225px;
+    top: 100px;
+    background-color: skyblue;
+    overflow: hidden;
+}
+
+#info-container{
+    position: absolute;
+    top: 100px;
+    left: 25px;
+    width: 175px;
+    height: 300px;
+}
+
+#score-container{
+    position: relative;
+    left: 10px;
+    width: 155px;
+    height: 90px;
+    background-color: #F7F7F9;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.score-text{
+    text-align: center;
+}
+
+#start-stop-container{
+    position: relative;
+    top: 25px;
+}
+
+#start-stop-container button{
+    position: relative;
+    left: 20px;
+    margin-bottom: 25px;
+    width: 130px;
+    height: 45px;
+    background-color: #DDD;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#start-stop-container button:hover{
+    background-color: #CCC;
+    cursor: pointer;
+}
+
+/* Dark Mode Page Styling */
+body.dark-mode #score-container{
+    background-color: #0F0F0F;
+    border: 1px solid #E0E0E0;
+}
+
+body.dark-mode #start-stop-container button{
+    background-color: #323232;
+    border: 1px solid #E0E0E0;
+    color: #E0E0E0;
+}
+
+body.dark-mode #start-stop-container button:hover{
+    background-color: #555;
+}
+
+body.dark-mode #score-submit-container{
+    background-color: #0F0F0F;
+    border: 1px solid #E0E0E0;
+}
+
+body.dark-mode #score-submit-container h2{
+    color: #E0E0E0;
+}
+
+body.dark-mode #score-submit-input{
+    background-color: #323232;
+    border: 1px solid #E0E0E0;
+    color: #E0E0E0;
+}
+
+body.dark-mode #score-submit-button{
+    background-color: #323232;
+    border: 1px solid #E0E0E0;
+    color: #E0E0E0;
+}
+
+body.dark-mode #score-submit-button:hover{
+    background-color: #555;
+}
+
+body.dark-mode #score-submit-close{
+    background-color: #323232;
+    color: #E0E0E0;
+}
+
+body.dark-mode #score-submit-close:hover{
+    background-color: #555;
+}
+
+/* Hidden Display */
+.hidden{
+    display: none;
+}
