@@ -42,6 +42,14 @@
         </header>
         <main>
             <div class="game_container" id="game-container">
+                <div id="score-submit-container" class="hidden">
+                    <h2 id="score-submit-title">Snake Score</h2>
+                    <h2 id="score-submit-score">0</h2>
+                    <input id="score-submit-input" type="text" name="Display Name" 
+                    maxlength="3" minlength="3" size="3">
+                    <button id="score-submit-button">Submit Score</button>
+                    <button id="score-submit-close">X</button>
+                </div>
             </div>
             <div id="score-container">
                 <h2 id="score-title">Score</h2>
@@ -51,7 +59,35 @@
             </div>
             <div id="start-stop-container">
                 <button id="start-game-button">Start</button>
-                <button id="stop-game-button">Stop</button>
+                <button id="stop-game-button">Pause</button>
+            </div>
+            <div id="modal-backdrop" class="hidden"></div>
+            <div id="end-modal" class="hidden modal-main">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <h2>GAME OVER</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your final score was <span id="score-showcase">3</span> </p>
+                        <div>
+                            <button id="submit-score-button">Submit Score</button>
+                            <button id="reset-game-button">Restart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pause-modal" class="hidden modal-main">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <h2>GAME PAUSED</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>The game is currently paused</span> </p>
+                        <div>
+                            <button id="resume-game-button">Resume</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
