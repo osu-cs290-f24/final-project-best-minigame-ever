@@ -25,6 +25,17 @@ app.get("/snake", function(req, res, next) {
 app.get("/leaderboard", function(req, res, next) {
     res.status(200).sendFile(__dirname + "/leaderboard/leaderboard.html")
 })
+//leaderboard data
+app.get("/leaderboard/:gameId", function(req, res, next){
+    var gameId = req.params.gameId
+    var scoreData = scoresFile[gameId]
+    if(scoreData && scoreData.scores){
+        res.status(200).json(scoreData.scores)
+    } else{
+        res.status(404).send("Game not found")
+    }
+})
+
 
 //submit score to leaderboard
 app.post("/leaderboard/:gameId/addScore", function(req, res, next) {
