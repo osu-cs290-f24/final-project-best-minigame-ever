@@ -77,25 +77,29 @@ function sendScore(){
         return;
     }
 
-    // package data
-    var data = {
-        name: inputField.value.toUpperCase(),
-        score: score
-    };
-
-    // mark this game as a submitted score
-    currentScoreSubmit = true;
-    document.getElementById("submit-score-button").style.backgroundColor = "#CCC";
-
-    // hide container
-    var scoreSubmitContainer = document.getElementById("score-submit-container");
-    scoreSubmitContainer.classList.add("hidden");
-
     // send to server
-    console.log(data);
-    /*
-        * TO DO
-    */
+    fetch("/leaderboard/flappyBird/addScore", {
+        method: "POST",
+        body: JSON.stringify({
+            name: inputField.value.toUpperCase(),
+            score: score
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function(res) {
+        if (res.status == 200){
+            // mark this game as a submitted score
+            currentScoreSubmit = true;
+            document.getElementById("submit-score-button").style.backgroundColor = "#CCC";
+
+            // hide container
+            var scoreSubmitContainer = document.getElementById("score-submit-container");
+            scoreSubmitContainer.classList.add("hidden");
+        } else {
+            alert("Error " + res.status + ": " + res.statusText);
+        }
+    });
 }
 
 function birdJump(){
