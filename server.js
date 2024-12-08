@@ -1,11 +1,12 @@
 var fs = require('fs')
 var express = require('express')
-var {table} = require('table')
+var {table, getBorderCharacters} = require('table')
 var port = process.env.PORT || 3000
 var app = express()
 app.use(express.static(__dirname))
 app.use(express.json())
 var scoresFile = require(__dirname + "/scores.json")
+
 
 
 //index.html
@@ -31,9 +32,15 @@ app.get("/leaderboard/:gameId", function(req, res, next){
     var gameId = req.params.gameId
     var scoreData = scoresFile[gameId]
     if(scoreData && scoreData.scores){
-        const data = [['Name', 'Score'], ...scoreData.scores.map(score => [score.name, score.score])]
-        res.status(200).json(table(data))
-    } else{
+        const data = [['#', 'Name', 'Score'], ...scoreData.scores.map((score, index) => [index + 1, score.name, score.score])];
+        
+
+
+        res.status(200).json(table(data, {
+            border: getBorderCharacters(`norc`)
+        }
+        ))
+    } else {
         res.status(404).send("Game not found")
     }
 })
