@@ -118,25 +118,61 @@ function move_snake(add = false){
 
 
 function start_game(){
-    initialize();
-    intervalId = setInterval(move_snake,200);
-    score_display.textContent = score
+    if(intervalId == null){
+        initialize();
+        intervalId = setInterval(move_snake,200);
+        score_display.textContent = score;
+    }
 }
 
 function button_input(e) {
-    if (e.key == 'd' || e.key == "ArrowRight") {
-        direction = 0; // right
-    } else if (e.key == 'w' || e.key == "ArrowUp") {
-        direction = 1; //Up
-    } else if (e.key == 'a' || e.key == "ArrowLeft") {
-        direction = 2; // Left
-    } else if (e.key == 's' || e.key == "ArrowDown") {
-        direction = 3; // Down
+    if(intervalId != null){
+        if (e.key == 'd' || e.key == "ArrowRight") {
+            if(direction != 2){
+                direction = 0;
+            }
+        } else if (e.key == 'w' || e.key == "ArrowUp") {
+            if(direction != 3){
+                direction = 1;
+            }
+        } else if (e.key == 'a' || e.key == "ArrowLeft") {
+            if(direction != 0){
+                direction = 2;
+            }
+        } else if (e.key == 's' || e.key == "ArrowDown") {
+            if(direction != 1){
+                direction = 3;
+            }
+        }
+    }
+}
+
+function stop_game(){
+    clearInterval(intervalId);
+    intervalId = null;
+}
+
+function pause_game(){
+    var backdrop = document.getElementById('modal-backdrop');
+    var pause_modal = document.getElementById('pause-modal');
+    backdrop.classList.toggle('hidden');
+    pause_modal.classList.toggle('hidden');
+    if(intervalId != null){
+        stop_game();
+    }
+    else{
+        intervalId = setInterval(move_snake,200);
     }
 }
 
 function end_game(){
-    clearInterval(intervalId);
+    stop_game();
+    var backdrop = document.getElementById('modal-backdrop');
+    var end_modal = document.getElementById('end-modal');
+    var final_score_container = document.getElementById('score-showcase'); 
+    final_score_container.textContent = score;
+    backdrop.classList.toggle('hidden');
+    end_modal.classList.toggle('hidden');
 }
 
 function check_collision(x_shift, y_shift){
@@ -189,11 +225,39 @@ function spawn_apple(){
     make_apple(apple_x,apple_y);
 }
 
+function submit_score(){
+    var score_container = document.getElementById('score-submit-container');
+    var score_submit_score = document.getElementById('score-submit-container');
+    var backdrop = document.getElementById('modal-backdrop');
+    var end_modal = document.getElementById('end-modal');
+    score_container.classList.toggle('hidden');
+    score_submit_score.textContent = score;
+    backdrop.classList.toggle('hidden');
+    end_modal.classList.toggle('hidden');
+}
+
 document.addEventListener("keyup", button_input);
 
 var start_button = document.getElementById("start-game-button");
 start_button.addEventListener("click", start_game);
 
+var pause_button = document.getElementById("stop-game-button");
+pause_button.addEventListener("click",pause_game);
+
+var reset_button = document.getElementById('reset-game-button');
+reset_button.addEventListener("click",function(){
+    var backdrop = document.getElementById('modal-backdrop');
+    var end_modal = document.getElementById('end-modal');
+    backdrop.classList.toggle('hidden');
+    end_modal.classList.toggle('hidden');
+    initialize();
+})
+
+var resume_button = document.getElementById('resume-game-button');
+resume_button.addEventListener("click", pause_game);
+
+var submit_score_button = document.getElementById('submit-score-button');
+submit_score_button.addEventListener("click",submit_score);
 
 function initialize(){
     score = 3;

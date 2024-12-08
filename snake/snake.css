@@ -1,10 +1,22 @@
-.game_container{
-    width:800px;
-    height:400px;
-    border:1px solid black;
-    position:absolute;
-    left:100px;
-    top:100px;
+#game-container{
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    left: 225px;
+    top: 100px;
+    background-color: skyblue;
+    overflow: hidden;
+}
+
+#score-container{
+    position: relative;
+    left: 10px;
+    width: 155px;
+    height: 90px;
+    background-color: #F7F7F9;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .snake{
@@ -25,4 +37,143 @@
 
 .hidden{
     display:none;
+}
+
+#modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-main {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1010;
+    overflow: scroll;
+}
+
+.modal-box {
+    position:relative;
+    width: auto;
+    max-width: 600px;
+    min-width: 350px;
+    min-height: 300px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.modal-header {
+    position: relative;
+    padding: 10px 20px;
+}
+
+#reset-game-button {
+    display:flex;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 28px;
+    text-align:center;
+}
+
+.modal-body p {
+    font-size: 18px;
+    text-align:center;
+}
+
+#reset-game-button{
+    margin-left:37.5%;
+    width:25%;
+    text-align:center;
+    font-size:18px;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+#resume-game-button{
+    margin-left:37.5%;
+    width:25%;
+    text-align:center;
+    font-size:18px;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+#score-submit-container{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 500px;
+    height: 300px;
+    z-index: 3;
+    background-color: #F7F7F9;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-container h2{
+    font-size: 32px;
+    margin-top: 10px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-input{
+    position: absolute;
+    top: 150px;
+    left: 205px;
+    width: 90px;
+    height: 40px;
+    font-size: 32px;
+    text-transform: uppercase;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-button{
+    position: absolute;
+    top: 220px;
+    left: 185px;
+    width: 130px;
+    height: 45px;
+    font-size: 20px;
+    background-color: #DDD;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-button:hover{
+    background-color: #CCC;
+    cursor: pointer;
+}
+
+#score-submit-close{
+    position: absolute;
+    top: 0px;
+    left: 473px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    background-color: #DDD;
+    border: none;
+    border-radius: 0px 4px 0px 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#score-submit-close:hover{
+    background-color: #CCC;
+    cursor: pointer;
 }
