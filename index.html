@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- temp name -->
-        <title>Minigames</title>
-        <!-- change when switching between light and dark mode -->
+        <title>Best Minigames</title>
+        <link rel="icon" href="/images/best-mini-game-ever-logo.png">
         <link rel="stylesheet" href="css/styles.css">
         <script src="index.js" defer></script>
     </head>
     <body>
-        <!-- Ren: -->
-        <!-- adding the menu page: -->
         <div class="menu-icon" id="menuIcon">
             <span></span>
             <span></span>
             <span></span>
-         </div>
+        </div>
 
-         <div class="side-menu" id="sideMenu">
+        <div class="side-menu" id="sideMenu">
             <div class="menu-items">
                 <!-- we have homepage, flappy brid and snakes game in menu: -->
-                 <a href="/">Homepage</a>
-                 <a href="/snake">Snake</a>
-                 <a href="/flappyBird">Flappy Bird</a>
+                <a href="/">Homepage</a>
+                <a href="/snake">Snake</a>
+                <a href="/flappyBird">Flappy Bird</a>
             </div>
-         </div>
-
-    <!-- I changed the structure of the main content, which can lets the menu page as hidden status-->
-    <header>
-        <!-- Ren: -->
-        <!-- I create this logo using AI logo designer, and I removed this watermarks using PS -->
-        <!-- I don't know is that ok or not, we can crate something like this pretty fast -->
-        <div class="logo-container">
-            <a href="/">
-                <img src="images/best-mini-game-ever-logo.png" alt="title logo">
-            </a>
         </div>
 
-        <div class="nav-container">
-            <a href="/" class="nav-button active" id="minigames-btn">Minigames!</a>
-            <a href="leaderboard" class="nav-button" id="leaderboard-btn">Leaderboard</a>
-        </div>
-        <div id="light-dark-container">
-            <button id="light-dark-button">Light Mode</button>
-        </div>
-    </header>
+        <header>
+            <div class="logo-container">
+                <a href="/">
+                    <img src="images/best-mini-game-ever-logo.png" alt="title logo">
+                </a>
+            </div>
+
+            <div class="nav-container">
+                <a href="/" class="nav-button active" id="minigames-btn">Minigames!</a>
+                <a href="leaderboard" class="nav-button" id="leaderboard-btn">Leaderboard</a>
+            </div>
+            <div id="light-dark-container">
+                <button id="light-dark-button">Light Mode</button>
+            </div>
+        </header>
         <main id="main-content">
+            <h1 id="site-title">Welcome to the Best Minigames Ever</h1>
             <div class="game-preview-container" id="snake-preview-container">
+                <h2 class="game-preview-title">Snake</h2>
                 <a href="/snake" id="snake-preview-link">
-                    <img src="images/sprev.gif" alt="snake preview" id="snake-preview-gif">
+                    <img src="images/sprev.gif" alt="snake preview" class="game-preview-gif">
+                    <button class="game-preview-button">Play Now</button>
                 </a>
             </div>
             <div class="game-preview-container" id="fb-preview-container">
+                <h2 class="game-preview-title">Flappy Bird</h2>
                 <a href="/flappyBird" id="fb-preview-link">
-                    <img src="images/fbprev.gif" alt="flappy bird preview" id="fb-preview-gif">
+                    <img src="images/fbprev.gif" alt="flappy bird preview" class="game-preview-gif">
+                    <button class="game-preview-button">Play Now</button>
                 </a>
             </div>
         </main>
