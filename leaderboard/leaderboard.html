@@ -1,71 +1,68 @@
 <!DOCTYPE html>
 
 <!-- Question need to be fixed:
- 1. (Ren) What is displayed in the central play area when we switch to Leaderboard? Do we show high score leaderboards for both games? Or just each game individually? I personally prefer show up leaderboards for both game, but we have a filter so that we can choose any specific game we want. -->
-<html>
-    <head>
-        <title>Leaderboard</title>
-        <!-- change when switching between light and dark mode -->
-        <link rel="stylesheet" href="../css/styles.css">
-        <script src="../index.js" defer></script>
-        <script src="leaderboard.js" defer></script>
-    </head>
-    <body>
-        <!-- Menu Icon -->
-        <!-- we have homepage, flappy brid and snakes game in menu: -->
-        <!-- Note: the file location is not same with 'index.html' -->
-        <div class="menu-icon" id="menuIcon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="side-menu" id="sideMenu">
-            <div class="menu-items">
-                <a href="/">Homepage</a>
-                <a href="/snake">Snake</a>
-                <a href="/flappyBird">Flappy Bird</a>
+    1. (Ren) What is displayed in the central play area when we switch to Leaderboard? Do we show high score leaderboards for both games? Or just each game individually? I personally prefer show up leaderboards for both game, but we have a filter so that we can choose any specific game we want. -->
+    <html>
+        <head>
+            <title>Leaderboard</title>
+            <link rel="icon" href="/images/best-mini-game-ever-logo.png">
+            <link rel="stylesheet" href="../css/styles.css">
+            <script src="../index.js" defer></script>
+            <script src="leaderboard.js" defer></script>
+        </head>
+        <body>
+            <div class="menu-icon" id="menuIcon">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </div>
-
-        <header>
-            <div class="logo-container">
-                <a href="/">
-                    <img src="../images/best-mini-game-ever-logo.png" alt="title logo">
-                </a>
+            <div class="side-menu" id="sideMenu">
+                <div class="menu-items">
+                    <a href="/">Homepage</a>
+                    <a href="/snake">Snake</a>
+                    <a href="/flappyBird">Flappy Bird</a>
+                </div>
             </div>
 
-            <div class="nav-container">
-                <a href="/" class="nav-button" id="minigames-btn">Minigames!</a>
-                <a href="/leaderboard" class="nav-button active" id="leaderboard-btn">Leaderboard</a>
-            </div>
-            <div id="light-dark-container">
-                <button id="light-dark-button">Light/Dark Toggle</button>
-            </div>
-        </header>
-        <main>
-            <div class="leaderboards-layout-container">
+            <header>
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="../images/best-mini-game-ever-logo.png" alt="title logo">
+                    </a>
+                </div>
+
+                <div class="nav-container">
+                    <a href="/" class="nav-button" id="minigames-btn">Minigames!</a>
+                    <a href="/leaderboard" class="nav-button active" id="leaderboard-btn">Leaderboard</a>
+                </div>
+                <div id="light-dark-container">
+                    <button id="light-dark-button">Light/Dark Toggle</button>
+                </div>
+            </header>
+            <main>
+                <div class="leaderboards-layout-container">
                     <!-- Ren: -->
-                <!-- This page's leaderboard could be helpful: http://flappybird.io/ -->
-                <div class="leaderboard-container">
-                    <h2 class="leaderboard-title">Snake</h2>
-                    <div class="leaderboard-data-container" id="snake-scores-container">
-                        <!-- TODO -->
-                        <!-- I'm thinking a table, more research needed -->
+                    <!-- This page's leaderboard could be helpful: http://flappybird.io/ -->
+                    <div class="leaderboard-container">
+                        <h2 class="leaderboard-title">Snake</h2>
+                        <div class="leaderboard-data-container" id="snake-scores-container">
+                            <!-- TODO -->
+                            <!-- I'm thinking a table, more research needed -->
+                        </div>
                     </div>
-                </div>
-                <div class="leaderboard-container">
-                    <h2 class="leaderboard-title">Flappy Bird</h2>
-                    <div class="leaderboard-data-container" id="flappyBird-scores-container">
-                        <!-- TODO -->
-                        <!-- I'm thinking a table, more research needed -->
+                    <div class="leaderboard-container">
+                        <h2 class="leaderboard-title">Flappy Bird</h2>
+                        <div class="leaderboard-data-container" id="flappyBird-scores-container">
+                            <!-- TODO -->
+                            <!-- I'm thinking a table, more research needed -->
+                        </div>
                     </div>
+                </div>     
+            </main>
+            <footer>
+                <div class="footer-content">
+                    <a href="#" class="footer-link">@about us</a>
                 </div>
-            </div>     
-        </main>
-        <footer>
-            <div class="footer-content">
-                <a href="#" class="footer-link">@about us</a>
-            </div>
-        </footer>
-    </body>
-</html>
+            </footer>
+        </body>
+    </html>
