@@ -27,6 +27,7 @@ app.get("/snake", function(req, res, next) {
 app.get("/leaderboard", function(req, res, next) {
     res.status(200).sendFile(__dirname + "/leaderboard/leaderboard.html")
 })
+
 //get leaderboard table
 app.get("/leaderboard/:gameId", function(req, res, next){
     var gameId = req.params.gameId
