@@ -314,3 +314,62 @@ body.dark-mode .return-home-btn:hover {
     color: #ffffff;
     transform: translateY(-2px) scale(1.1);
 }
+
+/* Homepage: */
+#site-title{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+#previews-container{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.game-preview-container{
+    background-color: #F7F7F9;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    margin: 10px;
+    width: 650px;
+}
+
+.game-preview-gif{
+    width: 600px;
+    height: 320px;
+    margin: 10px;
+}
+
+.game-preview-button{
+    width: 130px;
+    height: 45px;
+    background-color: #DDD;
+    border: 1px solid #000C;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 20px;
+}
+
+.game-preview-button:hover{
+    background-color: #CCC;
+    cursor: pointer;
+}
+
+body.dark-mode .game-preview-container{
+    background-color: #0F0F0F;
+    border: 1px solid #E0E0E0;
+}
+
+body.dark-mode .game-preview-button{
+    background-color: #323232;
+    border: 1px solid #E0E0E0;
+    color: #E0E0E0;
+}
+
+body.dark-mode .game-preview-button:hover{
+    background-color: #555;
+}
