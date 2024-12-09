@@ -9,7 +9,7 @@ var pipeSepVal = 120;
 var scoreElement = document.getElementById("current-score");
 const defaultBird = {
     top: 150,
-    speed: 3.5,
+    speed: -4,
     width: 40,
     height: 25,
     jumpSpeed: -4,
@@ -248,7 +248,7 @@ function updatePipes(){
     var pipeElements = document.getElementsByClassName("pipe-container");
 
     // add new pipe
-    if (pipes.length == 0 || (800 - pipes[pipes.length - 1].left) > (75 + pipeSepVal))
+    if (pipes.length == 0 || (800 - pipes[pipes.length - 1].left) > (180 + pipeSepVal))
         createPipe();
 
     // remove pipe
@@ -257,7 +257,7 @@ function updatePipes(){
 
     // move pipes
     for (var i = 0; i < pipes.length; i++)
-        pipes[i].left -= 2;
+        pipes[i].left -= 2 * (1 + (score/20));
 
     // update DOM
     for (var i = 0; i < pipeElements.length; i++){
