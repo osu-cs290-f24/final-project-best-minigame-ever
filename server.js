@@ -61,6 +61,8 @@ app.post("/leaderboard/:gameId/addScore", function(req, res, next) {
                 name: req.body.name,
                 score: req.body.score
             })
+            //sort scores
+            scoreData.sort((a, b) => b.score - a.score)
             fs.writeFile(
                 __dirname + "/scores.json",
                 JSON.stringify(scoresFile, null, 2),

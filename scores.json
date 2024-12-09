@@ -2,32 +2,32 @@
   "flappyBird": {
     "scores": [
       {
-        "name": "John",
-        "score": 10
+        "name": "abc",
+        "score": 123
       },
       {
-        "name": "Jane",
-        "score": 20
+        "name": "def",
+        "score": 23
       },
       {
-        "name": "Doe",
-        "score": 30
+        "name": "ghi",
+        "score": 3
       }
     ]
   },
   "snake": {
     "scores": [
       {
-        "name": "John",
-        "score": 10
+        "name": "abc",
+        "score": 123
       },
       {
-        "name": "Jane",
-        "score": 20
+        "name": "def",
+        "score": 23
       },
       {
-        "name": "Doe",
-        "score": 30
+        "name": "ghi",
+        "score": 3
       }
     ]
   }
