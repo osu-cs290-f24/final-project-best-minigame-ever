@@ -235,3 +235,82 @@ footer {
     color: #666;
     text-decoration: underline;
 }
+
+/* 404 page: */
+.error-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.error-code {
+    /* 404 number*/
+    font-size: 8rem;
+    font-weight: 700;
+    margin: 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.error-message {
+    /* Page not found */
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    color: #121212;
+}
+
+.error-description {
+    /* What are you looking for is not here anymore. */
+    font-size: 1.2rem;
+    color: #666;
+    margin: 1rem 0 2rem 0;
+}
+
+.return-home-btn {
+    /* Back home */
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-color: #121212;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #121212;
+    
+}
+
+.return-home-btn:hover {
+    background-color: transparent;
+    border-color: #121212;
+    color: #121212;
+    /* transform: translateY(-2px); */
+    transform: translateY(-2px) scale(1.1);
+}
+
+body.dark-mode .error-message {
+    color: #e1e1e1;
+}
+
+body.dark-mode .error-description {
+    color: #999;
+}
+
+body.dark-mode .return-home-btn {
+    background-color: #121212;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark-mode .return-home-btn:hover {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.1);
+}
