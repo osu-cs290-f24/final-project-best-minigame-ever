@@ -2,31 +2,31 @@
   "flappyBird": {
     "scores": [
       {
-        "name": "abc",
-        "score": 123
+        "name": "RYE",
+        "score": 67
       },
       {
-        "name": "def",
-        "score": 23
+        "name": "DEV",
+        "score": 81
       },
       {
-        "name": "ghi",
-        "score": 3
+        "name": "HAH",
+        "score": 21
       }
     ]
   },
   "snake": {
     "scores": [
       {
-        "name": "abc",
-        "score": 123
+        "name": "DEV",
+        "score": 169
       },
       {
-        "name": "def",
-        "score": 23
+        "name": "LEO",
+        "score": 50
       },
       {
-        "name": "ghi",
+        "name": "YAY",
         "score": 3
       }
     ]
