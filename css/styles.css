@@ -373,3 +373,14 @@ body.dark-mode .game-preview-button{
 body.dark-mode .game-preview-button:hover{
     background-color: #555;
 }
+.leaderboards-layout-container{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.leaderboards-layout-container pre{
+    font-size: 16px;
+    line-height: 1;
+}
