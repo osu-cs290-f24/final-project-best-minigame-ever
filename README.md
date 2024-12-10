@@ -21,13 +21,12 @@
 
 ## Next:
 1. ~~Game (most important part)~~
-2. Leaderboard
-3. Homepage
-4. Start / stop game function. (just for snake)
+2. ~~Leaderboard~~
+3. ~~Homepage~~
+4. ~~Start / stop game function.~~)
 5. ~~cookie?~~(No longer nessesary)
 6. '@about us'
-7. npm
-9. etc.
+7. ~~npm~~
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
