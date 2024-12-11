@@ -2,12 +2,12 @@
   "flappyBird": {
     "scores": [
       {
-        "name": "RYE",
-        "score": 67
-      },
-      {
         "name": "DEV",
         "score": 81
+      },
+      {
+        "name": "RYE",
+        "score": 67
       },
       {
         "name": "HAH",
