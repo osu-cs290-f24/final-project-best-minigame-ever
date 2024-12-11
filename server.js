@@ -27,15 +27,7 @@ app.get("/snake", function(req, res, next) {
 app.get("/leaderboard", function(req, res, next) {
     res.status(200).sendFile(__dirname + "/leaderboard/leaderboard.html")
 })
-app.get("/flappybird/*", function(req, res, next) {
-    res.status(404).sendFile(__dirname + "/404.html")
-})
-app.get("/snake/*", function(req, res, next) {
-    res.status(404).sendFile(__dirname + "/404.html")
-})
-app.get("/leaderboard/*", function(req, res, next) {
-    res.status(404).sendFile(__dirname + "/404.html")
-})
+
 
 // about us page:
 app.get("/about", function(req, res, next) {
@@ -100,6 +92,16 @@ app.post("/leaderboard/:gameId/addScore", function(req, res, next) {
 
 //page not found
 app.get("*", function(req, res, next) {
+    res.status(404).sendFile(__dirname + "/404.html")
+})
+
+app.get("/flappybird/*", function(req, res, next) {
+    res.status(404).sendFile(__dirname + "/404.html")
+})
+app.get("/snake/*", function(req, res, next) {
+    res.status(404).sendFile(__dirname + "/404.html")
+})
+app.get("/leaderboard/*", function(req, res, next) {
     res.status(404).sendFile(__dirname + "/404.html")
 })
 
