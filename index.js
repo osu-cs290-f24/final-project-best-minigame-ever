@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (buttonPath) {
             const currentPath = window.location.pathname;
             if (currentPath.endsWith(buttonPath)) {
-                button.classList.add('active');
+                //button.classList.add('active');
             }
         }
     });
