@@ -27,6 +27,10 @@ app.get("/snake", function(req, res, next) {
 app.get("/leaderboard", function(req, res, next) {
     res.status(200).sendFile(__dirname + "/leaderboard/leaderboard.html")
 })
+// about us page:
+app.get("/about", function(req, res, next) {
+    res.status(200).sendFile(__dirname + "/about.html")
+})
 
 //get leaderboard table
 app.get("/leaderboard/:gameId", function(req, res, next){

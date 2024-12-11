@@ -25,7 +25,7 @@
 3. ~~Homepage~~
 4. ~~Start / stop game function.~~)
 5. ~~cookie?~~(No longer nessesary)
-6. '@about us'
+6. ~~'@about us'~~
 7. ~~npm~~
 
 ## License
